@@ -606,7 +606,7 @@ static unsigned long backtrace_flag;
 
 static void smp_send_all_cpu_backtrace(void)
 {
-	unsigned int this_cpu;
+	unsigned int this_cpu = smp_processor_id();
 	int i;
 
 	if (test_and_set_bit(0, &backtrace_flag))
